@@ -1,0 +1,249 @@
+import javax.swing.*;
+002
+import java.awt.event.*;
+003
+ 
+004
+public class quiz2 extends JFrame
+005
+{
+006
+    private JButton anwser1;
+007
+    private JButton anwser2;
+008
+    private JButton anwser3;
+009
+    private JButton anwser4;
+010
+    private JPanel panel;
+011
+    private JLabel messageLabel;
+012
+    private JLabel messageLabel2;
+013
+    private final int WINDOW_WIDTH  = 300;
+014
+    private final int WINDOW_HEIGHT = 120;
+015
+    int c = 0;
+016
+ 
+017
+    public quiz2()
+018
+    {
+019
+        setTitle("Event Object Demonstration");
+020
+ 
+021
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+022
+ 
+023
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+024
+ 
+025
+        messageLabel = new JLabel("What program language is this written in");
+026
+ 
+027
+        anwser1 = new JButton("C++");
+028
+        anwser2 = new JButton("Java");
+029
+        anwser3 = new JButton("Unix");
+030
+        anwser4 = new JButton("Pearl");
+031
+ 
+032
+ 
+033
+        anwser1.addActionListener(new ButtonListener());
+034
+        anwser2.addActionListener(new ButtonListener());
+035
+        anwser3.addActionListener(new ButtonListener());
+036
+        anwser4.addActionListener(new ButtonListener());
+037
+ 
+038
+        panel = new JPanel();
+039
+        panel.add(messageLabel);
+040
+        panel.add(anwser1);
+041
+        panel.add(anwser2);
+042
+        panel.add(anwser3);
+043
+        panel.add(anwser4);
+044
+ 
+045
+        add(panel);
+046
+ 
+047
+        setVisible(true);
+048
+ 
+049
+ 
+050
+ 
+051
+            setTitle("Event Object Demonstration");
+052
+ 
+053
+            setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+054
+ 
+055
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+056
+ 
+057
+            messageLabel = new JLabel("What is 2 + 3");
+058
+ 
+059
+            anwser1 = new JButton("5");
+060
+            anwser2 = new JButton("19");
+061
+            anwser3 = new JButton("1");
+062
+            anwser4 = new JButton("6");
+063
+ 
+064
+ 
+065
+            anwser1.addActionListener(new ButtonListener());
+066
+            anwser2.addActionListener(new ButtonListener());
+067
+            anwser3.addActionListener(new ButtonListener());
+068
+            anwser4.addActionListener(new ButtonListener());
+069
+ 
+070
+            panel = new JPanel();
+071
+            panel.add(messageLabel);
+072
+            panel.add(anwser1);
+073
+            panel.add(anwser2);
+074
+            panel.add(anwser3);
+075
+            panel.add(anwser4);
+076
+ 
+077
+            add(panel);
+078
+ 
+079
+            setVisible(true);
+080
+        }
+081
+ 
+082
+ 
+083
+    private class ButtonListener implements ActionListener
+084
+    {
+085
+        public void actionPerformed(ActionEvent e)
+086
+        {
+087
+ 
+088
+        String actionCommand = e.getActionCommand();
+089
+ 
+090
+        if (actionCommand.equals("C++"))
+091
+        {
+092
+            JOptionPane.showMessageDialog(null, "Wrong");
+093
+ 
+094
+        }
+095
+        else if (actionCommand.equals("Java"))
+096
+        {
+097
+            JOptionPane.showMessageDialog(null, "Correct");
+098
+            c++;
+099
+ 
+100
+        }
+101
+        else if (actionCommand.equals("Unix"))
+102
+        {
+103
+            JOptionPane.showMessageDialog(null, "Wrong");
+104
+ 
+105
+        }
+106
+        else if (actionCommand.equals("Pearl"))
+107
+        {
+108
+            JOptionPane.showMessageDialog(null, "Wrong");
+109
+        }
+110
+ 
+111
+ 
+112
+    JOptionPane.showMessageDialog(null, c + "Correct out of 1" + 100 * c/1 + "%" );
+113
+    JOptionPane.showMessageDialog(null, 100 * c/1 + "%");
+114
+ 
+
+    }
+
+ 
+
+}
+
+ 
+
+    public static void main(String[] args)
+
+    {
+
+        quiz2 eow = new quiz2();
+
+ 
+
+    }
+
+ 
+
+}
